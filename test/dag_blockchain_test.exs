@@ -24,7 +24,7 @@ defmodule DagBlockchain.DagBlockchainTest do
   end
 
   @tag timeout: :infinity
-  #@tag :skip
+  @tag :skip
   test "Adding a large number of blocks", ~M{blockchain} do
     blockchain =
       blockchain
@@ -36,6 +36,7 @@ defmodule DagBlockchain.DagBlockchainTest do
   end
 
   @tag timeout: :infinity
+  @tag :skip
   test "Build dag" do
       {uSec, {:ok, dag}} = :timer.tc(fn ->
         build_dag(1, Dag.new() |> ok(&Dag.add_vertex(&1, "Block-1"))) end)
